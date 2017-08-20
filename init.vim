@@ -19,7 +19,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'jiangmiao/auto-pairs'
 
 " Vim-fugitive
-Plug '/tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Vim-gitgutter
 Plug 'airblade/vim-gitgutter'
@@ -34,6 +34,12 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Vim buftabline
+Plug 'ap/vim-buftabline'
+
+" Vim-tags
+Plug 'szw/vim-tags'
+
 " Initialize plugin system
 call plug#end()
 
@@ -47,6 +53,11 @@ let g:gruvbox_contrast_dark=3
 let g:gruvbox_contrast_light=3
 
 let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#enabled=1
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+let g:vim_tags_auto_generate=0
 
 set number
 set tabstop=4
@@ -59,5 +70,9 @@ set colorcolumn=80
 set hlsearch
 set incsearch
 
+set hidden
+
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
+noremap <C-l> :bnext<CR>
+noremap <C-h> :bprev<CR>
